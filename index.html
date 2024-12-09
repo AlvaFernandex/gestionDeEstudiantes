@@ -67,4 +67,60 @@
         &copy; 2024 Gestión de Estudiantes
     </footer>
 </body>
+
+<script>
+    const estudiantes = [{
+            nombre:"Juan",edad:17,calificaciones:[6,7,8]},
+            {nombre:"Maxi",edad:50,calificaciones:[10,9,9]},
+            {nombre:"Maria",edad:15,calificaciones:[4,6,9]},
+            {nombre:"Leo",edad:16,calificaciones:[4,6,6]},
+            {nombre:"Luis",edad:16,calificaciones:[10,6,6]}
+        ]
+        //Calcular promedio de cada estudiante
+        function promedios(){
+            for (let i in estudiantes) 
+            {let suma=0;
+                for (let e in estudiantes[i].calificaciones)
+                {
+                    suma+=estudiantes[i].calificaciones[e];
+                }
+                console.log("El promedio de "+estudiantes[i].nombre+" es: "+(suma/3).toFixed(1));
+                /*
+                const promedio =(estudiantes[i].calificaciones[0]+estudiantes[i].calificaciones[1]+estudiantes[i].calificaciones[2])/3;
+                console.log("El promedio de "+estudiantes[i].nombre+" es: "+promedio.toFixed(1))*/
+            }
+        }
+        //Identificar si el promedio es mayor a 7
+        function promedioMayorA7()
+        {
+            for (let i in estudiantes) 
+            {
+                const promedio =(estudiantes[i].calificaciones[0]+estudiantes[i].calificaciones[1]+estudiantes[i].calificaciones[2])/3;
+                if (promedio>=7)
+                { 
+                    console.log(estudiantes[i].nombre+" tiene un promedio mayor o igual a 7 ("+promedio.toFixed(1)+")")
+                }
+            }
+        }
+        //Buscar estudiante por nombre
+        function buscarEstudiante(nombre)
+        {
+            for (let i in estudiantes) 
+            {
+                if (estudiantes[i].nombre==nombre)
+                { 
+                    console.log("Nombre del estudiante: "+estudiantes[i].nombre+" Edad: "+estudiantes[i].edad+" Calificaciones: "+estudiantes[i].calificaciones)
+                }
+            }
+        }
+
+        promedios()
+        promedioMayorA7()
+        buscarEstudiante("Luis")
+
+
+
+</script>
 </html>
+
+
